@@ -160,6 +160,7 @@ func Initialize(opt *Options) (*discordgo.Session, error) {
 		Bot.ID = e.User.ID
 	})
 	// Inject message handler stuff
+	// @depercated doesn't actually inject
 	dg.AddHandler(func(s *discordgo.Session, m *discordgo.MessageCreate) {
 		// Ignore bots
 		if m.Author.Bot {
