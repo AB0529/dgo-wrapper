@@ -160,7 +160,7 @@ func Initialize(opt *Options) (*discordgo.Session, error) {
 		Bot.ID = e.User.ID
 	})
 	// Inject message handler stuff
-	dg.AddHandler(func(s *discordgo.Session, m *discordgo.MessageCreate) {
+	dg.AddHandler(func(s *discordgo.Session, m *discordgo.MessageCreate, context *Context) {
 		// Ignore bots
 		if m.Author.Bot {
 			return
