@@ -256,12 +256,12 @@ func (collector *MessageCollector) New(ctx *Context)  error {
 		select {
 			case msg := <-LastMessage:
 				// Cancel collector
-				if msg.Timestamp >= ctx.Message.Timestamp && msg.Author.ID == ctx.Message.Author.ID && strings.ToLower(msg.Content) == "c" {
+				if msg.Timestamp.After(ctx.Message.Timestamp) && msg.Author.ID == ctx.Message.Author.ID && strings.ToLower(msg.Content) == "c" {
 					return errors.New("collector canceled")
 				}
 
 				if len(collector.Filter) <= 0 {
-					if msg.Timestamp >= ctx.Message.Timestamp {
+					if msg.Timestamp.After(ctx.Message.Timestamp) {
 						if collector.EndAfter == 1 {
 							collector.MessagesCollected = append(collector.MessagesCollected, msg)
 							return nil
@@ -275,7 +275,7 @@ func (collector *MessageCollector) New(ctx *Context)  error {
 					// Run filter on message
 					err := f(msg.Content)
 
-					if msg.Timestamp >= ctx.Message.Timestamp {
+					if msg.Timestamp.After(ctx.Message.Timestamp) {
 						if err == nil {
 							if collector.EndAfter == 1 {
 								collector.MessagesCollected = append(collector.MessagesCollected, msg)
