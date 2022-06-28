@@ -1,12 +1,13 @@
 package dgowrapper
 
 import (
-	"dgo-wrapper/logger"
 	"errors"
 	"fmt"
-	"github.com/bwmarrin/discordgo"
 	"math/rand"
 	"strings"
+
+	"github.com/AB0529/dgo-wrapper/logger"
+	"github.com/bwmarrin/discordgo"
 )
 
 // Send sends a simple message

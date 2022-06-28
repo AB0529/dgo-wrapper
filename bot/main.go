@@ -1,14 +1,15 @@
 package main
 
 import (
-	"dgo-wrapper/logger"
-	"dgo-wrapper/src"
 	"fmt"
-	"github.com/bwmarrin/discordgo"
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"strings"
 	"time"
+
+	"github.com/AB0529/dgo-wrapper/logger"
+	dgowrapper "github.com/AB0529/dgo-wrapper/src"
+	"github.com/bwmarrin/discordgo"
+	"gopkg.in/yaml.v2"
 )
 
 type Conf struct {

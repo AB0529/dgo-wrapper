@@ -1,4 +1,4 @@
-module dgo-wrapper
+module github.com/AB0529/dgo-wrapper
 
 go 1.16
 

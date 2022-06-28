@@ -2,15 +2,16 @@ package dgowrapper
 
 import (
 	"context"
-	"dgo-wrapper/logger"
 	"errors"
 	"fmt"
-	"github.com/bwmarrin/discordgo"
 	"os"
 	"os/signal"
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/AB0529/dgo-wrapper/logger"
+	"github.com/bwmarrin/discordgo"
 )
 
 // TODO:
